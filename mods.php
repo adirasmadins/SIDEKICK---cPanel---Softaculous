@@ -172,11 +172,11 @@ function __post_mod_install(){
 	require_once($globals['path'].'/conf/mods/'.$software['softname'].'/sk_settings.php');
 
 
-	if (!defined('SK_DISTRIBUTOR_ID') || (defined(SK_DISTRIBUTOR_ID) && !SK_DISTRIBUTOR_ID)) {
-		$error[] = 'SK_DISTRIBUTOR_ID is not set';
+	if (!defined('SK_AFFILIATE_ID') || (defined(SK_AFFILIATE_ID) && !SK_AFFILIATE_ID)) {
+		$error[] = 'SK_AFFILIATE_ID is not set';
 		return;
 	} else {
-		$data['sk_distributor_id'] = SK_DISTRIBUTOR_ID;
+		$data['sk_affiliate_id'] = SK_AFFILIATE_ID;
 	}
 
 	if (defined('SK_FIRST_USE') && SK_FIRST_USE) {

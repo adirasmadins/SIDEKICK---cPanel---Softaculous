@@ -3,7 +3,7 @@
 // Adds distributor id to installations for tracking purposes
 
 // Distributor identification number
-define('SK_DISTRIBUTOR_ID',123);
+define('SK_AFFILIATE_ID',123);
 
 // Custom CSS class for distributor
 define('SK_CUSTOM_CLASS','default');
