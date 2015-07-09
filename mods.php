@@ -171,16 +171,49 @@ function __post_mod_install(){
 
 	require_once($globals['path'].'/conf/mods/'.$software['softname'].'/sk_settings.php');
 
-	$query = "INSERT INTO " .
-	$__settings['dbprefix'] . 
-	"options (option_name, option_value) 
-	VALUES 
-	('sk_distributor_id', " . SK_DISTRIBUTOR_ID . "), 
-	('sk_firstuse', " . SK_DISTRIBUTOR_ID . "), 
-	('sk_do_activation_redirect', " . SK_FIRST_USE . "), 
-	('sk_custom_class', '" . SK_ACTIVATION_REDIRECT . "');
-	";
+
+	if (!defined('SK_DISTRIBUTOR_ID') || (defined(SK_DISTRIBUTOR_ID) && !SK_DISTRIBUTOR_ID)) {
+		$error[] = 'SK_DISTRIBUTOR_ID is not set';
+		return;
+	} else {
+		$data['sk_distributor_id'] = SK_DISTRIBUTOR_ID;
+	}
+
+	if (defined('SK_FIRST_USE') && SK_FIRST_USE) {
+		$data['sk_firstuse'] = SK_FIRST_USE;
+	}
+
+	if (defined('SK_JUST_ACTIVATED') && SK_JUST_ACTIVATED) {
+		$data['sk_just_activated'] = SK_JUST_ACTIVATED;
+	}
+
+	if (defined('SK_ACTIVATION_REDIRECT') && SK_ACTIVATION_REDIRECT) {
+		$data['sk_do_activation_redirect'] = SK_ACTIVATION_REDIRECT;
+	}
+
+	if (defined('SK_CUSTOM_CLASS') && SK_CUSTOM_CLASS) {
+		$data['sk_custom_class'] = SK_CUSTOM_CLASS;
+	}
+
+	// $error[] = json_encode($data);
+
+	foreach( $data as $key => $val) {
+		if (is_string($val)) {
+			$sql[] = '("'.($key).'", "'.$val.'")';
+		} else {			
+			$sql[] = '("'.($key).'", '.$val.')';
+		}
+	}
+	$rows = implode(", ", $sql);
+
+	$query = "INSERT INTO " . $__settings['dbprefix'] . "options (option_name, option_value) VALUES $rows;";
 	$result = sdb_query($query, $__settings['softdbhost'], $__settings['softdbuser'], $__settings['softdbpass'], $__settings['softdb']);
+
+	if (!$result) {
+		$error[] =$sql;
+		$error[] =$result;
+	}
+	
 
 	if ((isset($__settings['multisite']) && $__settings['multisite'])) {
 

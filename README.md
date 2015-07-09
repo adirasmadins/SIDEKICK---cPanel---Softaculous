@@ -19,6 +19,7 @@ The **sk_settings.php** file contains specific configuration to your account and
 * **SK\_CUSTOM\_CLASS** - Custom CSS class for distributor
 * **SK\_FIRST\_USE** - This will open Sidekick drawer once when the user logs in
 * **SK\_ACTIVATION\_REDIRECT** - This will redirect user to the Sidekick settings page once when the user logs in
+* **SK\_JUST\_ACTIVATED** - This will display the getting started with Sidekick walkthrough 
 
 ##Activation Process
 
