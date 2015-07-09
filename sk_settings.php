@@ -1,8 +1,6 @@
 <?php 
 
-// Adds distributor id to installations for tracking purposes
-
-// Distributor identification number
+// Adds affiliate id to installations for tracking purposes
 define('SK_AFFILIATE_ID',123);
 
 // Custom CSS class for distributor

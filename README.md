@@ -15,8 +15,8 @@ If **conf/mods/wp** folders don't exist they have to be created. Once the mod ha
 
 The **sk_settings.php** file contains specific configuration to your account and should not be changed. This configuration file will be provided by the SIDEKICK team.
 
-* **SK\_DISTRIBUTOR\_ID** - Distributor identification number
-* **SK\_CUSTOM\_CLASS** - Custom CSS class for distributor
+* **SK\_AFFILIATE\_ID** - Affiliate identification number
+* **SK\_CUSTOM\_CLASS** - Custom CSS class for affiliate
 * **SK\_FIRST\_USE** - This will open Sidekick drawer once when the user logs in
 * **SK\_ACTIVATION\_REDIRECT** - This will redirect user to the Sidekick settings page once when the user logs in
 * **SK\_JUST\_ACTIVATED** - This will display the getting started with Sidekick walkthrough 
