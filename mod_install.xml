@@ -1,0 +1,12 @@
+<softinstall xmlns="http://www.softaculous.com">
+	<settings>
+		<group>
+			<heading>{{select_plugins}}</heading>
+			<input type="checkbox" name="sidekick" value="on" CHECKED>
+				<head>Sidekick</head>
+				<exp>Put over 200, on-demand, interactive WordPress Tutorials right inside your dashboard. <br/><br/>If selected Sidekick plugin will be installed and activated with your installation.<br />
+		Click <a href="http://wordpress.org/plugins/sidekick/" target="_blank">here</a> to visit plugin site.</exp>
+			</input>
+		</group>
+	</settings>
+</softinstall>
