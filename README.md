@@ -9,6 +9,8 @@ These files should be placed into this folder:
 
 If **conf/mods/wp** folders don't exist they have to be created. Once the mod has been uploaded it will show up during the one click **WordPress** installation process.
 
+** *Please note, you'll need to log out of the cPanel account and log back in before the option will show for the user under the one WordPress click installation.*
+
 ##Options
 
 The **sk_settings.php** file contains specific configuration to your account and should not be changed. This configuration file will be provided by the SIDEKICK team.
